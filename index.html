@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elefante Difusión | Imprenta Premium</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <canvas id="fluid-canvas"></canvas>
+
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="https://i.imgur.com/DX9tgoC.png" alt="Elefante Difusión Nav Logo" class="nav-logo-img">
+            </div>
+            <div class="nav-links">
+                <a href="#servicios">Servicios</a>
+                <a href="#portafolio">Portafolio</a>
+                <a href="#nosotros">Nosotros</a>
+                <a href="#contacto">Contacto</a>
+            </div>
+            <a href="#contacto" class="nav-btn">Cotizar <span>→</span></a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-logo-container">
+               <img src="https://i.imgur.com/Iqdd3Nc.png" alt="Elefante Difusión" class="hero-logo-img">
+            </div>
+            <h1></h1><!-- Typewriter target -->
+            
+            <div class="hero-actions">
+                <a href="#contacto" class="btn-primary">Cotiza con nosotros</a>
+                <a href="#portafolio" class="btn-secondary">Nuestros trabajos</a>
+            </div>
+        </section>
+
+        <section id="servicios" class="services-section">
+            <div class="container">
+                <h2 class="section-title">Nuestros Servicios</h2>
+                <div class="services-grid">
+                    <div class="service-col">
+                        <h3>Impresión Offset</h3>
+                        <ul class="sub-services">
+                            <li>Afiches</li>
+                            <li>Revistas</li>
+                            <li>Calendarios</li>
+                            <li>Dípticos / Trípticos</li>
+                            <li>Imanes Publicitarios</li>
+                        </ul>
+                    </div>
+                    <div class="service-col">
+                        <h3>Impresión Digital</h3>
+                        <ul class="sub-services">
+                            <li>Pendones</li>
+                            <li>Talonarios</li>
+                            <li>Agendas / Libros</li>
+                            <li>Carpetas Corporativas</li>
+                            <li>Entradas con prepicado y folio</li>
+                        </ul>
+                    </div>
+                    <div class="service-col">
+                        <h3>Gigantografías</h3>
+                        <div class="main-sub">Soportes publicitarios</div>
+                        <ul class="sub-services">
+                            <li>Flyers</li>
+                            <li>Autoadhesivos</li>
+                            <li>Regalos Publicitarios</li>
+                            <li>Tarjetas de presentación</li>
+                            <li>Credenciales plastificadas</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="portafolio" class="generic-section dark-section">
+            <div class="container">
+                <h2 class="section-title">Portafolio</h2>
+                <p class="section-desc">Echa un vistazo a nuestros proyectos más recientes y la calidad de nuestras impresiones.</p>
+                <div class="placeholder-grid">
+                    <div class="image-box">Proyectos Recientes</div>
+                    <div class="image-box">Gran Formato</div>
+                    <div class="image-box">Papelería Corporativa</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="nosotros" class="generic-section">
+            <div class="container">
+                <h2 class="section-title">Nosotros</h2>
+                <div class="about-content">
+                    <p>En <strong>Elefante Difusión</strong>, nos dedicamos a transformar ideas en realidades tangibles con la más alta precisión. Con años de experiencia en el sector de la imprenta, combinamos tecnología de punta con un compromiso inquebrantable con la calidad.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto" class="generic-section dark-section">
+            <div class="container">
+                <h2 class="section-title">Contacto</h2>
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <p><strong>Ubicación:</strong> Tu Dirección, Ciudad</p>
+                        <p><strong>Teléfono:</strong> +56 9 XXXX XXXX</p>
+                        <p><strong>Email:</strong> contacto@elefantedifusion.cl</p>
+                    </div>
+                    <form class="contact-form">
+                        <input type="text" placeholder="Nombre completo">
+                        <input type="email" placeholder="Correo electrónico">
+                        <textarea placeholder="¿En qué podemos ayudarte?"></textarea>
+                        <button type="submit" class="btn-primary">Enviar Mensaje</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Elefante Difusión. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
