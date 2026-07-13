@@ -15,7 +15,9 @@
     <header>
         <nav>
             <div class="logo">
-                <img src="https://i.imgur.com/DX9tgoC.png" alt="Elefante Difusión Nav Logo" class="nav-logo-img">
+                <a href="#">
+                    <img src="https://i.imgur.com/DX9tgoC.png" alt="Elefante Difusión Nav Logo" class="nav-logo-img">
+                </a>
             </div>
             <div class="nav-links">
                 <a href="#servicios">Servicios</a>
@@ -36,61 +38,162 @@
             
             <div class="hero-actions">
                 <a href="#contacto" class="btn-primary">Cotiza con nosotros</a>
-                <a href="#portafolio" class="btn-secondary">Nuestros trabajos</a>
+                <a href="#servicios" class="btn-secondary">Nuestros trabajos</a>
             </div>
         </section>
 
-        <section id="servicios" class="services-section">
+        <section id="herramientas" class="generic-section">
             <div class="container">
-                <h2 class="section-title">Nuestros Servicios</h2>
-                <div class="services-grid">
-                    <div class="service-col">
-                        <h3>Impresión Offset</h3>
-                        <ul class="sub-services">
-                            <li>Afiches</li>
-                            <li>Revistas</li>
-                            <li>Calendarios</li>
-                            <li>Dípticos / Trípticos</li>
-                            <li>Imanes Publicitarios</li>
-                        </ul>
+                <h2 class="section-title">Herramientas para ti</h2>
+                <p class="section-desc">Utiliza nuestras aplicaciones web integradas para facilitar tu proceso de impresión y cotización de manera rápida.</p>
+                <div class="services-grid" style="grid-template-columns: 1fr 1fr; gap: 40px;">
+                    <div class="service-col" style="display: flex; flex-direction: column; text-align: center; border: 2px solid var(--primary-orange); height: 100%;">
+                        <h3 style="font-size: 1.8rem; margin-bottom: 15px;">Cotizador de Adhesivos</h3>
+                        <p style="margin-bottom: 25px; color: #555;">Calcula el valor exacto de tus adhesivos personalizados según tamaño, cantidad y material en segundos.</p>
+                        <a href="cotizador.html" class="btn-primary" style="display: inline-block; margin-top: auto;">Abrir Cotizador</a>
                     </div>
-                    <div class="service-col">
-                        <h3>Impresión Digital</h3>
-                        <ul class="sub-services">
-                            <li>Pendones</li>
-                            <li>Talonarios</li>
-                            <li>Agendas / Libros</li>
-                            <li>Carpetas Corporativas</li>
-                            <li>Entradas con prepicado y folio</li>
-                        </ul>
-                    </div>
-                    <div class="service-col">
-                        <h3>Gigantografías</h3>
-                        <div class="main-sub">Soportes publicitarios</div>
-                        <ul class="sub-services">
-                            <li>Flyers</li>
-                            <li>Autoadhesivos</li>
-                            <li>Regalos Publicitarios</li>
-                            <li>Tarjetas de presentación</li>
-                            <li>Credenciales plastificadas</li>
-                        </ul>
+                    <div class="service-col" style="display: flex; flex-direction: column; text-align: center; border: 2px solid var(--primary-orange); height: 100%;">
+                        <h3 style="font-size: 1.8rem; margin-bottom: 15px;">Revisor de Boquilla</h3>
+                        <p style="margin-bottom: 25px; color: #555;">Sube tu diseño y verifica automáticamente si cumple con los márgenes y requisitos de corte (boquilla).</p>
+                        <a href="boquilla.html" class="btn-primary" style="display: inline-block; margin-top: auto;">Revisar Archivo</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="portafolio" class="generic-section dark-section">
-            <div class="container">
-                <h2 class="section-title">Portafolio</h2>
-                <p class="section-desc">Echa un vistazo a nuestros proyectos más recientes y la calidad de nuestras impresiones.</p>
-                <div class="placeholder-grid">
-                    <div class="image-box">Proyectos Recientes</div>
-                    <div class="image-box">Gran Formato</div>
-                    <div class="image-box">Papelería Corporativa</div>
+        <section id="clientes" class="clientes-section">
+            <div class="marquee-container">
+                <div class="marquee">
+                    <span>MARCAS DESTACADAS CLIENTES DESTACADOS MARCAS DESTACADAS CLIENTES DESTACADOS MARCAS DESTACADAS CLIENTES DESTACADOS </span>
+                    <span>MARCAS DESTACADAS CLIENTES DESTACADOS MARCAS DESTACADAS CLIENTES DESTACADOS MARCAS DESTACADAS CLIENTES DESTACADOS </span>
                 </div>
+            </div>
+            
+            <div class="clients-list">
+                <div class="client-item" data-img="https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80">
+                    <div class="client-name">BRAND ONE</div>
+                    <div class="client-desc">Impresión Offset</div>
+                </div>
+                <div class="client-item" data-img="https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80">
+                    <div class="client-name">BRAND TWO</div>
+                    <div class="client-desc">Gigantografías</div>
+                </div>
+                <div class="client-item" data-img="https://images.unsplash.com/photo-1586281380349-632531db7ed4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80">
+                    <div class="client-name">BRAND THREE</div>
+                    <div class="client-desc">Papelería Corporativa</div>
+                </div>
+                <div class="client-item" data-img="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80">
+                    <div class="client-name">BRAND FOUR</div>
+                    <div class="client-desc">Adhesivos</div>
+                </div>
+            </div>
+            
+            <img class="hover-reveal-img" src="" alt="Client Reveal">
+        </section>
+
+        <!-- SERVICIOS: Tarjetas Apiladas -->
+        <section id="servicios" class="services-stack-section">
+            <!-- Marquee título igual que clientes -->
+            <div class="marquee-container services-marquee">
+                <div class="marquee">
+                    <span>NUESTROS SERVICIOS NUESTROS TRABAJOS NUESTROS SERVICIOS NUESTROS TRABAJOS NUESTROS SERVICIOS </span>
+                    <span>NUESTROS SERVICIOS NUESTROS TRABAJOS NUESTROS SERVICIOS NUESTROS TRABAJOS NUESTROS SERVICIOS </span>
+                </div>
+            </div>
+            <div class="cards-stack">
+
+                <div class="stack-card" style="background: #ff6600;">
+                    <div class="stack-card-inner">
+                        <div class="stack-card-content">
+                            <span class="stack-num">01</span>
+                            <h3 class="stack-name">Impresión<br>Offset</h3>
+                            <div class="stack-tags">
+                                <span>Flyers</span>
+                                <span>Trípticos</span>
+                                <span>Cuadernos</span>
+                                <span>Revistas</span>
+                                <span>Calendarios</span>
+                                <span>Dípticos</span>
+                            </div>
+                            <p class="stack-desc">Alta calidad para grandes tiradas. Colores vibrantes, papel premium y acabados que impresionan. Ideal para material corporativo y publicitario de gran volumen.</p>
+                            <a href="portafolio-offset.html" class="stack-btn">Ver más →</a>
+                        </div>
+                        <div class="stack-card-img">
+                            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="Impresión Offset">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stack-card" style="background: #1a0b2e;">
+                    <div class="stack-card-inner">
+                        <div class="stack-card-content">
+                            <span class="stack-num">02</span>
+                            <h3 class="stack-name">Impresión<br>Digital</h3>
+                            <div class="stack-tags">
+                                <span>Pendones</span>
+                                <span>Talonarios</span>
+                                <span>Agendas</span>
+                                <span>Carpetas</span>
+                                <span>Etiquetas</span>
+                                <span>Volantes</span>
+                            </div>
+                            <p class="stack-desc">Flexibilidad total para tiradas cortas con resultados profesionales. Perfecto para pedidos rápidos, prototipos y proyectos con diseño variable.</p>
+                            <a href="portafolio-digital.html" class="stack-btn">Ver más →</a>
+                        </div>
+                        <div class="stack-card-img">
+                            <img src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=600&q=80" alt="Impresión Digital">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stack-card" style="background: #0a0a0a;">
+                    <div class="stack-card-inner">
+                        <div class="stack-card-content">
+                            <span class="stack-num">03</span>
+                            <h3 class="stack-name">Giganto&shy;grafías</h3>
+                            <div class="stack-tags">
+                                <span>Banners</span>
+                                <span>Lonas</span>
+                                <span>Vallas</span>
+                                <span>Autoadhesivos</span>
+                                <span>Murales</span>
+                                <span>Backdrops</span>
+                            </div>
+                            <p class="stack-desc">Impacto visual a gran escala. Impresión en gran formato para eventos, locales comerciales, campañas publicitarias y decoración de espacios.</p>
+                            <a href="portafolio-giganto.html" class="stack-btn">Ver más →</a>
+                        </div>
+                        <div class="stack-card-img">
+                            <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=600&q=80" alt="Gigantografías">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stack-card" style="background: #1c1c1c;">
+                    <div class="stack-card-inner">
+                        <div class="stack-card-content">
+                            <span class="stack-num">04</span>
+                            <h3 class="stack-name">Papelería<br>Corporativa</h3>
+                            <div class="stack-tags">
+                                <span>Tarjetas</span>
+                                <span>Sobres</span>
+                                <span>Membretes</span>
+                                <span>Credenciales</span>
+                                <span>Carpetas</span>
+                                <span>Bolsas</span>
+                            </div>
+                            <p class="stack-desc">Tu marca reflejada en cada detalle. Creamos identidad corporativa completa con materiales de alta gama que transmiten profesionalismo y elegancia.</p>
+                            <a href="portafolio-papeleria.html" class="stack-btn">Ver más →</a>
+                        </div>
+                        <div class="stack-card-img">
+                            <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&q=80" alt="Papelería Corporativa">
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </section>
 
+        <!-- NOSOTROS -->
         <section id="nosotros" class="generic-section">
             <div class="container">
                 <h2 class="section-title">Nosotros</h2>
@@ -100,24 +203,54 @@
             </div>
         </section>
 
-        <section id="contacto" class="generic-section dark-section">
-            <div class="container">
-                <h2 class="section-title">Contacto</h2>
-                <div class="contact-grid">
-                    <div class="contact-info">
-                        <p><strong>Ubicación:</strong> Tu Dirección, Ciudad</p>
-                        <p><strong>Teléfono:</strong> +56 9 XXXX XXXX</p>
-                        <p><strong>Email:</strong> contacto@elefantedifusion.cl</p>
+        <!-- CONTACTO: Tarjeta flotante sobre texto gigante animado -->
+        <section id="contacto" class="contact-modern">
+            <div class="contact-marquee-wrapper">
+                <div class="contact-text-row" id="contact-row-1">
+                    <span>HABLEMOS</span>
+                    <span>HABLEMOS</span>
+                    <span>HABLEMOS</span>
+                    <span>HABLEMOS</span>
+                </div>
+                <div class="contact-text-row contact-text-row--reverse" id="contact-row-2">
+                    <span>ELEFANTE DIFUSIÓN</span>
+                    <span>ELEFANTE DIFUSIÓN</span>
+                    <span>ELEFANTE DIFUSIÓN</span>
+                    <span>ELEFANTE DIFUSIÓN</span>
+                </div>
+                <div class="contact-text-row" id="contact-row-3">
+                    <span>HABLEMOS</span>
+                    <span>HABLEMOS</span>
+                    <span>HABLEMOS</span>
+                    <span>HABLEMOS</span>
+                </div>
+
+                <!-- Tarjeta flotante centrada sobre el texto -->
+                <div class="contact-card-overlay">
+                    <div class="contact-info-vertical">
+                        <div class="contact-item">
+                            <span class="contact-label">Ubicación</span>
+                            <span class="contact-value">Santiago, Chile</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-label">Teléfono</span>
+                            <span class="contact-value">+56 9 XXXX XXXX</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-label">Email</span>
+                            <span class="contact-value">contacto@elefantedifusion.cl</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-label">Horario</span>
+                            <span class="contact-value">Lun – Vie: 09:00 – 18:00</span>
+                        </div>
+                        <a href="mailto:contacto@elefantedifusion.cl" class="contact-cta">Escríbenos →</a>
                     </div>
-                    <form class="contact-form">
-                        <input type="text" placeholder="Nombre completo">
-                        <input type="email" placeholder="Correo electrónico">
-                        <textarea placeholder="¿En qué podemos ayudarte?"></textarea>
-                        <button type="submit" class="btn-primary">Enviar Mensaje</button>
-                    </form>
                 </div>
             </div>
         </section>
+
+
     </main>
 
     <footer>

@@ -164,29 +164,366 @@ nav {
   transition: background-color 0.3s;
 }
 
-/* Services Section */
-.services-section {
+/* --- Clientes Section (Marquee + Mouse Track) --- */
+.clientes-section {
   position: relative;
-  background-color: #f8f9fa;
-  color: #1a0b2e;
+  background-color: #000;
   padding: 100px 0;
-  z-index: 20;
+  overflow: hidden;
+  color: white;
 }
 
-.container {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 2rem;
+.marquee-container {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 20px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.section-title {
-  font-size: clamp(2rem, 5vw, 3rem);
-  font-weight: 900;
-  text-align: center;
-  margin-bottom: 60px;
+.marquee {
+  display: inline-block;
+  animation: marquee 30s linear infinite;
+}
+
+.marquee span {
+  font-size: clamp(3rem, 6vw, 6rem);
+  font-family: serif; /* Misma tipografía que las marcas de abajo */
+  font-weight: 400;
   text-transform: uppercase;
+  color: #ffffff; /* Letra rellena (no transparente) */
+  padding-right: 20px;
 }
 
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.clients-list {
+  width: 100%;
+  margin: 60px 0 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.client-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px 4%; /* Apegado a la orilla con margen responsivo */
+  border-top: 1px solid rgba(255, 255, 255, 0.15); /* Línea superior */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15); /* Línea inferior */
+  margin-top: -1px; /* Para superponer bordes dobles */
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+  overflow: hidden; /* Necesario para que el fondo no se salga */
+}
+
+/* Efecto de llenado de fondo de abajo hacia arriba */
+.client-item::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background-color: #ffffff; /* Color que se llena (blanco) */
+  z-index: -1;
+  transition: height 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.client-item:hover::before {
+  height: 100%;
+}
+
+.client-name {
+  font-size: clamp(3rem, 8vw, 7rem);
+  font-family: serif; /* Para darle el toque de revista elegante como en la foto */
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #ffffff;
+  transition: color 0.4s ease;
+  line-height: 1;
+}
+
+.client-desc {
+  font-size: 1.1rem;
+  color: #888;
+  text-align: right;
+  transition: color 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.client-item:hover .client-name {
+  color: #000000; /* Al llenarse de blanco, el texto se vuelve negro */
+}
+
+.client-item:hover .client-desc {
+  color: #000000;
+}
+
+.hover-reveal-img {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 350px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+  pointer-events: none;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.8);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 10;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+.hover-reveal-img.visible {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* --- Services Stack Cards (EasySeller Style) --- */
+.services-stack-section {
+  position: relative;
+  z-index: 20;
+  background: #000;
+}
+
+/* Marquee específico de servicios */
+.services-marquee {
+  background: #000;
+  border-top: 1px solid rgba(255,255,255,0.15);
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+  padding: 28px 0;
+}
+
+.services-marquee .marquee span {
+  color: #ffffff;
+  -webkit-text-stroke: 0;
+  font-family: serif;
+  font-weight: 400;
+}
+
+.cards-stack {
+  position: relative;
+}
+
+.stack-card {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.stack-card:nth-child(1) { z-index: 1; }
+.stack-card:nth-child(2) { z-index: 2; }
+.stack-card:nth-child(3) { z-index: 3; }
+.stack-card:nth-child(4) { z-index: 4; }
+
+.stack-card-inner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 4%;
+  gap: 5%;
+}
+
+.stack-card-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  color: #fff;
+}
+
+.stack-num {
+  font-size: 1rem;
+  font-weight: 500;
+  opacity: 0.6;
+  letter-spacing: 0.2em;
+}
+
+.stack-name {
+  font-family: serif;
+  font-size: clamp(3.5rem, 8vw, 7rem);
+  font-weight: 400;
+  line-height: 1;
+  text-transform: uppercase;
+  color: #fff;
+  margin: 0;
+}
+
+.stack-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.stack-tags span {
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.3);
+  color: #fff;
+  padding: 6px 16px;
+  border-radius: 99px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  backdrop-filter: blur(4px);
+}
+
+.stack-desc {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.7);
+  max-width: 420px;
+}
+
+.stack-btn {
+  display: inline-block;
+  background: #fff;
+  color: #000;
+  text-decoration: none;
+  padding: 14px 32px;
+  border-radius: 99px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  transition: transform 0.3s ease, background 0.3s ease;
+  align-self: flex-start;
+}
+
+.stack-btn:hover {
+  transform: translateY(-3px);
+  background: #ff6600;
+  color: #fff;
+}
+
+.stack-card-img {
+  width: 380px;
+  height: 500px;
+  flex-shrink: 0;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.stack-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* --- Contact Modern (HABLEMOS + tarjeta flotante) --- */
+.contact-modern {
+  position: relative;
+  z-index: 20;
+  background: #0f051a;
+  color: #fff;
+  overflow: hidden;
+}
+
+.contact-marquee-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  overflow: hidden;
+  padding: 60px 0;
+}
+
+.contact-text-row {
+  display: flex;
+  white-space: nowrap;
+  will-change: transform;
+  transition: transform 0.1s linear;
+}
+
+.contact-text-row span {
+  font-family: serif;
+  font-size: clamp(5rem, 14vw, 14rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: 2px rgba(255,255,255,0.15);
+  padding-right: 60px;
+  line-height: 1;
+  user-select: none;
+}
+
+/* Tarjeta blanca flotante centrada */
+.contact-card-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 50px 55px;
+  width: 90%;
+  max-width: 480px;
+  z-index: 10;
+  box-shadow: 0 40px 80px rgba(0,0,0,0.5);
+}
+
+.contact-info-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.contact-item {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  padding-bottom: 22px;
+}
+
+.contact-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--primary-orange);
+}
+
+.contact-value {
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: #111;
+}
+
+.contact-cta {
+  display: inline-block;
+  background: var(--primary-orange);
+  color: #fff;
+  text-decoration: none;
+  padding: 16px 36px;
+  border-radius: 99px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  transition: transform 0.3s ease, background 0.3s ease;
+  align-self: flex-start;
+  margin-top: 6px;
+}
+
+.contact-cta:hover {
+  transform: translateY(-3px);
+  background: #cc5200;
+}
+
+
+
+/* --- Herramientas Grid (Restaurado) --- */
 .services-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -199,46 +536,6 @@ nav {
   border-radius: 24px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.05);
   transition: transform 0.3s ease;
-}
-
-.service-col h3 {
-  font-size: 1.4rem;
-  font-weight: 800;
-  color: #ff6600;
-  margin-bottom: 5px;
-  text-transform: uppercase;
-}
-
-.main-sub {
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: #ff6600;
-  margin-bottom: 20px;
-  text-transform: uppercase;
-}
-
-.sub-services {
-  list-style: none;
-  margin-top: 15px;
-  border-top: 1px solid #eee;
-  padding-top: 20px;
-}
-
-.sub-services li {
-  font-size: 0.9rem;
-  font-weight: 500;
-  margin-bottom: 12px;
-  padding-left: 25px;
-  position: relative;
-  color: #555;
-}
-
-.sub-services li::before {
-  content: '→';
-  position: absolute;
-  left: 0;
-  color: #ff6600;
-  font-weight: 700;
 }
 
 /* MEDIA QUERIES PARA CELULAR */
@@ -301,6 +598,20 @@ nav {
   }
 }
 
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.section-title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 60px;
+  text-transform: uppercase;
+}
+
 /* Mas Estilos para Secciones Genericas */
 .generic-section {
   padding: 100px 0;
@@ -308,6 +619,13 @@ nav {
   z-index: 20;
   background-color: #ffffff;
   color: #1a0b2e;
+}
+
+#herramientas {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .dark-section {

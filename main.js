@@ -132,3 +132,49 @@ window.addEventListener('scroll', () => {
         header.classList.remove('scrolled');
     }
 });
+
+// ==========================================
+// CLIENTS HOVER REVEAL EFFECT
+// ==========================================
+const clientItems = document.querySelectorAll('.client-item');
+const hoverImg = document.querySelector('.hover-reveal-img');
+
+if (clientItems.length > 0 && hoverImg) {
+    clientItems.forEach(item => {
+        item.addEventListener('mouseenter', (e) => {
+            const imgSrc = item.getAttribute('data-img');
+            hoverImg.src = imgSrc;
+            hoverImg.classList.add('visible');
+        });
+        
+        item.addEventListener('mouseleave', () => {
+            hoverImg.classList.remove('visible');
+        });
+        
+        item.addEventListener('mousemove', (e) => {
+            hoverImg.style.left = e.clientX + 'px';
+            hoverImg.style.top = e.clientY + 'px';
+        });
+    });
+}
+
+// ==========================================
+// CONTACT SECTION - SCROLL PARALLAX TEXT
+// ==========================================
+const contactRow1 = document.getElementById('contact-row-1');
+const contactRow2 = document.getElementById('contact-row-2');
+const contactRow3 = document.getElementById('contact-row-3');
+const contactSection = document.getElementById('contacto');
+
+if (contactRow1 && contactRow2 && contactSection) {
+    window.addEventListener('scroll', () => {
+        const rect = contactSection.getBoundingClientRect();
+        const progress = -rect.top / window.innerHeight;
+        
+        const offset = progress * 250;
+        // Filas impares → derecha, filas pares → izquierda
+        contactRow1.style.transform = `translateX(${offset}px)`;
+        contactRow2.style.transform = `translateX(${-offset}px)`;
+        if (contactRow3) contactRow3.style.transform = `translateX(${offset}px)`;
+    });
+}
